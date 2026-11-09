@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vitozev-skills",
+  "description": "Skills for Claude Code, starting with video production.",
+  "owner": {
+    "name": "vitozev",
+    "url": "https://github.com/vitozev"
+  },
+  "plugins": [
+    {
+      "name": "claude-skills",
+      "source": "./",
+      "description": "Skills for Claude Code. First up: phone-portal-reel, a 9-second vertical product reel where products fall out of a phone screen, made from generated stills.",
+      "homepage": "https://github.com/vitozev/claude-skills",
+      "license": "MIT",
+      "keywords": ["skills", "video", "reels", "product-video", "hyperframes", "three.js"]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./lib/three/three.module.js" } }</script>
+    <style>
+      @font-face { font-family: MosslingWord; src: url('assets/fonts/MosslingWord.ttf'); }
+      @font-face { font-family: MosslingSans; src: url('assets/fonts/MosslingSans.ttf'); }
+      :root { --ground: #1a1712; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 100%; height: 100%; font-family: MosslingSans; }
+      #frame { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="9" data-width="1080" data-height="1920">
+      <canvas id="frame" class="clip" data-start="0" data-duration="9" data-track-index="0" width="1080" height="1920"></canvas>
+      <audio id="mix" src="assets/audio/mix.wav" data-start="0" data-duration="9" data-track-index="1"></audio>
+    </div>
+    <script>
+      // The picture is drawn by lib/reel.js from timeline time; this timeline only carries the length.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 9 }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+    <script type="module">
+      import { createReel } from './lib/reel.js';
+      window.__hf = window.__hf || {};
+      window.__hf.buildReady = window.__hf.buildReady || {};
+      let reel = null;
+      const ready = createReel(document.getElementById('frame')).then((r) => { reel = r; return r; });
+      window.__hf.buildReady['reel'] = ready;
+      let pending = 0;
+      window.addEventListener('hf-seek', (e) => {
+        const t = e.detail.time;
+        if (reel) { reel.renderAt(t); return; }
+        e.detail.waitUntil && e.detail.waitUntil(ready.then((r) => r.renderAt(t)));
+      });
+      // standalone stills for look-dev: index.html?t=1.23
+      const q = new URLSearchParams(location.search);
+      if (q.has('t')) ready.then((r) => { r.renderAt(+q.get('t')); document.title = 'done'; });
+      else ready.then((r) => r.renderAt(0));
+    </script>
+  </body>
+</html>

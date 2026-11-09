@@ -1,0 +1,47 @@
+{
+ "music": [
+  {
+   "name": "bed_v1",
+   "prompt": "Bright, playful, warm acoustic pop instrumental for a cosy tea-shop product reel, exactly 112 BPM, 4/4, starts at once on the downbeat with the full groove, no intro, no fade-in. Plucked felt marimba and pizzicato strings play steady, bouncy sixteenth notes; a soft round kick on every beat; light hand claps on 2 and 4; a little upright bass; a celesta sparkle now and then. Dry, close, crisp transients, tight and clean, no reverb wash, no vocals.",
+   "seconds": 14.0,
+   "model_id": "music_v2_5"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "box_thud_a",
+   "prompt": "A small cardboard tea box dropped from about 20 cm lands flat on a solid oiled walnut sideboard: one short dull papery thud, a faint rattle of loose tea leaves inside, close-miked, dry, no room echo.",
+   "seconds": 0.6
+  },
+  {
+   "name": "box_thud_b",
+   "prompt": "A light paperboard box of loose-leaf tea falls a short way onto a hardwood shelf: a soft, muffled cardboard tap-thud with a tiny rustle of tea inside, very close and dry.",
+   "seconds": 0.6
+  },
+  {
+   "name": "box_thud_c",
+   "prompt": "A cardboard tea carton lands on a wooden counter top: a quick hollow card thump, a whisper of dry leaves shifting inside, intimate studio foley, no reverb.",
+   "seconds": 0.6
+  },
+  {
+   "name": "box_thud_d",
+   "prompt": "A small boxed tea dropped onto a walnut table: a compact low cardboard knock with a slight papery edge, loose tea settling inside, dry close foley.",
+   "seconds": 0.6
+  },
+  {
+   "name": "box_thud_heavy",
+   "prompt": "A cardboard tea box dropped onto a walnut sideboard lands on one edge then slaps flat: a fuller cardboard thud followed a fraction later by a softer second tap as it rocks and settles, loose tea rattling inside, close and dry.",
+   "seconds": 0.9
+  },
+  {
+   "name": "logo_rise",
+   "prompt": "A single soft upward glissando on a felt-mallet marimba that blooms into one warm, gentle bell-like note, cosy and clean, no reverb tail beyond a second.",
+   "seconds": 1.6
+  },
+  {
+   "name": "shop_roomtone",
+   "prompt": "Quiet room tone of a small empty tea shop in the afternoon: very soft distant street hush, faint fridge hum, nothing distinct, steady.",
+   "seconds": 4.0
+  }
+ ]
+}
