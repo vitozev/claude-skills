@@ -13,7 +13,7 @@ As a Claude Code plugin:
 
 ```text
 /plugin marketplace add vitozev/claude-skills
-/plugin install claude-skills@vitozev-skills
+/plugin install vitozev-skills@vitozev
 ```
 
 Or copy one skill into your personal skills folder:
